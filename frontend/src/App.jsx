@@ -9,13 +9,13 @@ import FAQPage from "./pages/FaqPages";
 import Footer from "./components/Footer";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import AskGemini from "./pages/AskGemini";
 
 function App() {
   return (
     <div className="w-full ">
       <Router>
         <Navbar />
-
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -24,6 +24,7 @@ function App() {
           <Route path="/faqs" element={<FAQPage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/askgemini" element={<AskGemini />} />
         </Routes>
         <Footer />
       </Router>

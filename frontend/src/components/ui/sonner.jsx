@@ -9,10 +9,10 @@ const Toaster = ({ ...props }) => {
   const [currentTheme, setCurrentTheme] = useState("light");
 
   useEffect(() => {
-    const systemTheme =
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
     setCurrentTheme(theme === "system" ? systemTheme : theme);
   }, [theme]);
 

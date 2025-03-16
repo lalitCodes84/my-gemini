@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 
 function Register() {
-  const navigate = useNavigate();  // ✅ Moved useNavigate() here
+  const navigate = useNavigate(); // ✅ Moved useNavigate() here
 
   const {
     register,
