@@ -8,7 +8,13 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"), // Add this alias
+      "@": path.resolve(__dirname, "./src"),
     },
+  },
+  build: {
+    outDir: 'dist', // Ensures build output is in 'dist'
+  },
+  server: {
+    historyApiFallback: true, // Fixes the 404 error on refresh in dev mode
   },
 });
