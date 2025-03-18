@@ -5,7 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import AboutPage from "./pages/AboutPage"; // Example additional page
 import Services from "./pages/Services";
 import ContactPage from "./pages/ContactPage";
-import FAQPage from "./pages/FaqPages";
+import FAQPage from "./pages/FAQPages";
 import Footer from "./components/Footer";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
