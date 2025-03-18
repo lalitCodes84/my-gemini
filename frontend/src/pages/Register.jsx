@@ -36,7 +36,7 @@ function Register() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://localhost:4444/user/register", {
+      const response = await fetch("https://my-gemini.onrender.com/user/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
