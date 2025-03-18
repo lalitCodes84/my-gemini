@@ -15,7 +15,7 @@ import { Toaster } from "sonner"; // Import your Toaster component
 function App() {
   return (
     <div className="w-full ">
-      <Router>
+      <>
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -28,7 +28,7 @@ function App() {
           <Route path="/askgemini" element={<AskGemini />} />
         </Routes>
         <Footer />
-      </Router>
+      </>
       <Toaster />
     </div>
   );
