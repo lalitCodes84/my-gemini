@@ -61,6 +61,12 @@ function Navbar() {
             )}
           </div>
         ))}
+
+        {/* Register & Login Buttons */}
+        <div className="flex flex-col gap-2 w-full items-center md:hidden">
+          <Link to="/register" className="bg-green-500 text-white px-4 py-2 rounded-md w-[80%] text-center">Register</Link>
+          <Link to="/login" className="bg-blue-500 text-white px-4 py-2 rounded-md w-[80%] text-center">Login</Link>
+        </div>
       </div>
     </nav>
   );
