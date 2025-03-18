@@ -15,6 +15,14 @@ app.use(express.json());
 app.use("/api/gemini", geminiRoutes);
 app.use("/user", userRoutes);
 
+app.get("/",async (req,res)=>{
+try {
+  res.json({message:"Server started successfully"})
+} catch (error) {
+  res.json({message:`Error occured : ${error}`})
+}
+})
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, async () => {
   try {
