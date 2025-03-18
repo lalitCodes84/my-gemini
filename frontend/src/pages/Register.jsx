@@ -25,11 +25,11 @@ function Register() {
     watch,
   } = useForm({
     defaultValues: {
-      name: "LALIT SHARMA",
-      email: "vickysharma71za@gmail.com",
-      password: "Lovemymom9@",
-      phone: "7619020725",
-      age: "28",
+      name: "",
+      email: "",
+      password: "",
+      phone: "",
+      age: "",
       gender: "",
     },
   });
