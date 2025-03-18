@@ -79,7 +79,7 @@ function AskGemini() {
             placeholder="Ask with Ask Gemini?"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full pr-10"
+            className="w-full pr-10 pb-0"
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
           />
           <Search
