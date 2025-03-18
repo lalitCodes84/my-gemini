@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 
 function Register() {
-  const navigate = useNavigate(); // ✅ Moved useNavigate() here
+  const navigate = useNavigate();
 
   const {
     register,
@@ -49,8 +49,9 @@ function Register() {
 
       if (response.ok) {
         toast.success(result.message || "Registration successful!");
-
-        // ✅ Navigate to Login page after success
+        setTimeout(() => navigate("/login"), 2000);
+      } else if (result.message === "User already registered") {
+        toast.warning("User already registered. Redirecting to login...");
         setTimeout(() => navigate("/login"), 2000);
       } else {
         toast.error(result.message || "Registration failed.");
@@ -150,7 +151,6 @@ function Register() {
               )}
             </div>
 
-            {/* Gender - Corrected Implementation */}
             <div>
               <Label htmlFor="gender">Gender</Label>
               <Select
