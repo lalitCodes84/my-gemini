@@ -30,7 +30,7 @@ function AskGemini() {
     try {
       const token = localStorage.getItem("token");
       const { data } = await axios.post(
-        "http://localhost:4444/api/gemini/ask",
+        "https://my-gemini.onrender.com/api/gemini/ask",
         { query },
         { headers: { Authorization: `Bearer ${token}` } } // **Token included**
       );

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for the hamburger menu
 import menuItems from "../utils/menuItems";
 import RegisterLoginDropdown from "./RegisterLoginDropdown";
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // For Hamburger Menu
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -21,11 +23,20 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="flex justify-between p-2 fixed w-full bg-[#2e3e4d] items-center top-0 px-16 z-50">
-      <span className="p-1 font-extrabold text-2xl text-[#e5fdfa]">
-        G-GEMINI
-      </span>
-      <div className="flex gap-10 text-blue-50 relative">
+    <nav className="flex justify-between p-2 fixed w-full bg-[#2e3e4d] items-center top-0 px-4 md:px-16 z-50">
+      <span className="block w-[100%] p-1 font-bold text-2xl text-[#e5fdfa] ">G-Gemini</span>
+
+      {/* Hamburger Icon for Mobile View */}
+      <div className="md:hidden cursor-pointer text-[#e5fdfa]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
+      </div>
+
+      {/* Menu Items */}
+      <div
+        className={`absolute md:static top-16 left-0 w-full bg-[#2e3e4d] flex flex-col md:flex-row gap-4 md:gap-10 text-blue-50 items-center md:items-start md:justify-end px-4 py-2 md:p-0 ${
+          isMenuOpen ? "flex" : "hidden md:flex"
+        }`}
+      >
         {menuItems.map((menu, index) => (
           <div key={index} className={`relative dropdown-container`}>
             <Link
@@ -33,9 +44,10 @@ function Navbar() {
               className="hover:text-gray-600 hover:underline cursor-pointer"
               onClick={(e) => {
                 if (menu.name === "Register/Login") {
-                  e.preventDefault(); // Prevent navigation only for "Register/Login"
+                  e.preventDefault();
                   setIsDropdownOpen(!isDropdownOpen);
                 }
+                if (isMenuOpen) setIsMenuOpen(false); // Close menu after clicking a link
               }}
             >
               {menu.name}
