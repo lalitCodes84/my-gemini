@@ -71,7 +71,7 @@ const Login = () => {
 
         <button
           type="submit"
-          className={`w-full p-2 rounded-md text-white bg-blue-500 hover:bg-blue-600 transition ${
+          className={`w-full p-2 rounded-md cursor-pointer text-white bg-blue-500 hover:bg-blue-600 transition ${
             loading ? "opacity-50 cursor-not-allowed" : ""
           }`}
           disabled={loading}

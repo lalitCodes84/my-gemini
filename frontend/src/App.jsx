@@ -10,12 +10,14 @@ import Footer from "./components/Footer";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import AskGemini from "./pages/AskGemini";
+import { Toaster } from "sonner"; // Import your Toaster component
 
 function App() {
   return (
     <div className="w-full ">
       <Router>
         <Navbar />
+
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -28,6 +30,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+      <Toaster />
     </div>
   );
 }
