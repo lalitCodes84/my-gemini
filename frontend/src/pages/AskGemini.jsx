@@ -55,8 +55,8 @@ function AskGemini() {
   };
 
   return (
-    <div className="p-6 mt-14 flex justify-center items-center h-screen">
-      <Card className="h-[80vh] w-[80vw] border-2">
+    <div className="flex justify-center items-center h-screen">
+      <Card className="h-[80vh] w-[80vw] border-2 mt-8">
         <CardContent className="h-[70vh] overflow-auto p-4">
           <h1 className="text-2xl font-bold mb-4">Ask Gemini</h1>
 
