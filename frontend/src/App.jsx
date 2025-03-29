@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
@@ -35,11 +35,11 @@ const AnimatedRoutes = () => {
 function App() {
     return (
         <div className="w-full pb-4">
-            <Router>
+            
                 <Navbar />
                 <AnimatedRoutes />
                 <Footer />
-            </Router>
+           
             <Toaster />
         </div>
     );
