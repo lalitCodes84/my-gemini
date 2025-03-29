@@ -1,12 +1,8 @@
 import React from "react";
 import servicesData from "../utils/servicesData";
 import { motion } from "framer-motion"; // Import motion for animations
+import { pageVariants } from "@/utils/pageVariants";
 
-const pageVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
-};
 
 const ServicesPage = () => {
   return (

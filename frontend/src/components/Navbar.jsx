@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for the hamburger menu
 import menuItems from "../utils/menuItems";
 import RegisterLoginDropdown from "./RegisterLoginDropdown";
- 
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -25,10 +24,20 @@ function Navbar() {
 
   return (
     <nav className="flex justify-between p-2 fixed w-full bg-[#2e3e4d] items-center top-0 px-4 md:px-16 z-50">
-      <div className="flex w-[100%] p-1 font-bold text-2xl text-[#e5fdfa] "><img src="/Logo with Border design.png" alt="G-Gemini Logo" className="w-8"/>&nbsp;G-Gemini</div>
+      <div className="flex w-[100%] p-1 font-bold text-2xl text-[#e5fdfa] ">
+        <img
+          src="/Logo with Border design.png"
+          alt="G-Gemini Logo"
+          className="w-8"
+        />
+        &nbsp;G-Gemini
+      </div>
 
       {/* Hamburger Icon for Mobile View */}
-      <div className="md:hidden cursor-pointer text-[#e5fdfa]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <div
+        className="md:hidden cursor-pointer text-[#e5fdfa]"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
         {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
       </div>
 
@@ -65,8 +74,18 @@ function Navbar() {
 
         {/* Register & Login Buttons */}
         <div className="flex flex-col gap-2 w-full items-center md:hidden">
-          <Link to="/register" className="bg-green-500 text-white px-4 py-2 rounded-md w-[80%] text-center">Register</Link>
-          <Link to="/login" className="bg-blue-500 text-white px-4 py-2 rounded-md w-[80%] text-center">Login</Link>
+          <Link
+            to="/register"
+            className="bg-green-500 text-white px-4 py-2 rounded-md w-[80%] text-center"
+          >
+            Register
+          </Link>
+          <Link
+            to="/login"
+            className="bg-blue-500 text-white px-4 py-2 rounded-md w-[80%] text-center"
+          >
+            Login
+          </Link>
         </div>
       </div>
     </nav>
