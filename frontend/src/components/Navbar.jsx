@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for the hamburger menu
 import menuItems from "../utils/menuItems";
 import RegisterLoginDropdown from "./RegisterLoginDropdown";
+ 
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -24,7 +25,7 @@ function Navbar() {
 
   return (
     <nav className="flex justify-between p-2 fixed w-full bg-[#2e3e4d] items-center top-0 px-4 md:px-16 z-50">
-      <span className="block w-[100%] p-1 font-bold text-2xl text-[#e5fdfa] ">G-Gemini</span>
+      <div className="flex w-[100%] p-1 font-bold text-2xl text-[#e5fdfa] "><img src="/Logo with Border design.png" alt="G-Gemini Logo" className="w-8"/>&nbsp;G-Gemini</div>
 
       {/* Hamburger Icon for Mobile View */}
       <div className="md:hidden cursor-pointer text-[#e5fdfa]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
