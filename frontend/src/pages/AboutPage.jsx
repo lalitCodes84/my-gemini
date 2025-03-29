@@ -3,7 +3,7 @@ import aboutData from "../utils/aboutData";
 
 const AboutPage = () => {
   return (
-    <div className="p-6 mt-14 bg-gray-900 text-white h-[100vh]">
+    <div className="p-6 mt-14 bg-gray-900 text-white h-fit">
       <h1 className="text-4xl font-bold text-center text-[#e5fdfa]">
         {aboutData.title}
       </h1>
