@@ -5,12 +5,16 @@ import { Search } from "lucide-react";
 import axios from "axios";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom"; // **For redirecting on session expiry**
+// import env from "dotenv";
+// env.config()
 
 function AskGemini() {
   const [query, setQuery] = useState("");
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const API_URL = "https://my-gemini-backend.vercel.app/api/gemini/ask";
+ 
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -29,8 +33,7 @@ function AskGemini() {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
-      const { data } = await axios.post(
-        "https://my-gemini.onrender.com/api/gemini/ask",
+      const { data } = await axios.post(API_URL,
         { query },
         { headers: { Authorization: `Bearer ${token}` } } // **Token included**
       );
